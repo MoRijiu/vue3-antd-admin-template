@@ -1,0 +1,228 @@
+{
+  // ==================== 项目说明 ====================
+  // Vue 3 + TypeScript + Ant Design Vue + Vite 管理后台模板
+  // 本配置文件针对项目技术栈进行了优化，包含以下功能：
+  // - 自动格式化（Prettier）
+  // - 自动修复 ESLint 错误
+  // - UnoCSS 智能提示
+  // - Vue 3 组合式 API 支持
+  // - TypeScript 类型检查
+  // - 文件嵌套规则（保持目录整洁）
+
+  // ==================== UnoCSS 配置 ====================
+  "unocss.root": "uno.config.ts",
+
+  // ==================== 文件关联 ====================
+  "files.associations": {
+    "*.css": "postcss",
+    "*.cjs": "javascript",
+    ".env*": "dotenv"
+  },
+
+  // ==================== Sass 配置 ====================
+  "scss.lint.unknownAtRules": "ignore",
+
+  // ==================== 编辑器配置 ====================
+  // 在字符串中启用快速建议（对 UnoCSS 类名提示很有用）
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // 保存时自动格式化
+  "editor.formatOnSave": true,
+
+  // 保存时自动修复 ESLint 错误
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // 默认格式化工具
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 编辑器字体配置（可选）
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.6,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+
+  // 启用括号对着色
+  "editor.bracketPairColorization.enabled": true,
+
+  // 启用粘性滚动（显示当前作用域）
+  "editor.stickyScroll.enabled": true,
+
+  // 针对特定语言的格式化工具
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "files.trimTrailingWhitespace": false
+  },
+
+  // ==================== ESLint 配置 ====================
+  "eslint.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  // ESLint 扁平配置支持
+  "eslint.useFlatConfig": true,
+
+  // ==================== TypeScript 配置 ====================
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  // 启用 TypeScript 的 Inlay Hints（内联提示）
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+
+  // ==================== Vue 配置 ====================
+  // 启用 Volar 的 Take Over 模式
+  "vue.server.hybridMode": true,
+
+  // ==================== CSS 智能提示 ====================
+  "css.validate": true,
+  "scss.validate": true,
+  "less.validate": true,
+
+  // ==================== 文件排除 ====================
+  // 不隐藏任何文件，保持所有文件可见
+  "files.exclude": {
+    // 只隐藏系统文件
+    "**/.DS_Store": true,
+    "**/.git": false,
+    "**/node_modules": false
+  },
+
+  // ==================== 搜索排除 ====================
+  // 搜索时排除这些目录，但文件资源管理器中仍然可见
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/coverage": true,
+    "**/.git": true,
+    "**/pnpm-lock.yaml": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true,
+    "**/.vite": true,
+    "**/.cache": true
+  },
+
+  // ==================== 其他配置 ====================
+  // 文件末尾自动插入新行
+  "files.insertFinalNewline": true,
+
+  // 删除行尾空格
+  "files.trimTrailingWhitespace": true,
+
+  // 文件编码
+  "files.encoding": "utf8",
+
+  // 文件自动保存
+  "files.autoSave": "onFocusChange",
+
+  // ==================== 文件嵌套规则 ====================
+  // 启用文件嵌套功能，将相关文件组织在一起，保持目录结构清晰
+  // 所有文件仍然可见，只是通过嵌套折叠，点击展开箭头即可查看子文件
+  "explorer.fileNesting.enabled": true,
+  // 默认折叠嵌套文件，需要时手动展开
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    // ==================== 项目配置文件 ====================
+
+    // 包管理器：将锁文件嵌套在 package.json 下
+    "package.json": "pnpm-lock.yaml, package-lock.json, yarn.lock, .npmrc, .nvmrc, .node-version",
+
+    // TypeScript：将扩展配置嵌套在主配置下
+    "tsconfig.json": "tsconfig.*.json",
+
+    // Vite：将环境特定配置嵌套
+    "vite.config.ts": "vite.config.*.ts, vite.config.*.js",
+
+    // ESLint：将 ESLint 相关文件嵌套（包括自动生成的 auto-import 配置）
+    "eslint.config.js": ".eslintrc-auto-import.json, .eslintignore, .eslintcache",
+
+    // Prettier：将 ignore 文件嵌套在配置文件下
+    ".prettierrc.cjs": ".prettierignore",
+
+    // Commitlint：将 commitizen 配置嵌套
+    "commitlint.config.cjs": ".czrc, .cz-config.js, .commitlintrc, .commitlintrc.js, .commitlintrc.json",
+
+    // UnoCSS：将配置变体嵌套
+    "uno.config.ts": "uno.config.*.ts",
+
+    // PostCSS：将 browserslist 配置嵌套
+    "postcss.config.cjs": ".browserslistrc",
+
+    // 环境变量：将所有环境文件嵌套在 .env 下
+    ".env": ".env.local, .env.development, .env.production, .env.test, .env.example",
+
+    // Git：将 Git 相关配置嵌套
+    ".gitignore": ".gitattributes, .gitmodules",
+
+    // 文档：将辅助文档嵌套在主文档下
+    "README.md": "README.*.md, CHANGELOG.md, CHANGELOG.*.md, CONTRIBUTING.md, LICENSE, LICENSE.*, AUTHORS, CODE_OF_CONDUCT.md",
+
+    // ==================== 源代码文件 ====================
+
+    // Vue 组件：将测试文件、样式文件、类型定义嵌套在组件下
+    "*.vue": "$(capture).spec.ts, $(capture).test.ts, $(capture).spec.js, $(capture).test.js, $(capture).stories.ts, $(capture).stories.js, $(capture).module.css, $(capture).module.scss, $(capture).module.sass, $(capture).d.ts",
+
+    // TypeScript/JavaScript：将类型定义、测试、样式嵌套在主文件下
+    "*.ts": "$(capture).spec.ts, $(capture).test.ts, $(capture).d.ts, $(capture).js.map, $(capture).min.js",
+    "*.tsx": "$(capture).spec.tsx, $(capture).test.tsx, $(capture).d.ts, $(capture).module.css, $(capture).module.scss",
+    "*.js": "$(capture).spec.js, $(capture).test.js, $(capture).min.js, $(capture).js.map",
+    "*.jsx": "$(capture).spec.jsx, $(capture).test.jsx, $(capture).module.css, $(capture).module.scss",
+
+    // 样式文件：将编译后的文件嵌套在源文件下
+    "*.css": "$(capture).css.map, $(capture).min.css",
+    "*.scss": "$(capture).css, $(capture).css.map, $(capture).min.css",
+    "*.sass": "$(capture).css, $(capture).css.map, $(capture).min.css",
+    "*.less": "$(capture).css, $(capture).css.map, $(capture).min.css",
+
+    // 入口文件：将类型定义和测试嵌套
+    "index.ts": "index.d.ts, index.spec.ts, index.test.ts, index.js",
+    "index.js": "index.d.ts, index.spec.js, index.test.js, index.min.js",
+    "main.ts": "main.d.ts, main.spec.ts, main.test.ts, main.js",
+
+    // ==================== 脚本文件 ====================
+
+    // 跨平台脚本：将 shell 脚本嵌套在 PowerShell 脚本下（同名脚本）
+    "*.ps1": "$(capture).sh, $(capture).bash, $(capture).zsh, $(capture).cmd",
+
+    // ==================== 构建产物 ====================
+
+    // HTML：将相关资源嵌套
+    "index.html": "index.*.html, favicon.ico, robots.txt, sitemap.xml"
+  }
+}
+

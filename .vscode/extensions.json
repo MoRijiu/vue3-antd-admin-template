@@ -1,3 +1,49 @@
 {
-  "recommendations": ["Vue.volar"]
+  "recommendations": [
+    // ==================== 核心扩展（必需） ====================
+    // Vue 3 官方语言支持
+    "Vue.volar",
+    // TypeScript Vue 插件
+    "Vue.vscode-typescript-vue-plugin",
+    // ESLint 代码检查
+    "dbaeumer.vscode-eslint",
+    // Prettier 代码格式化
+    "esbenp.prettier-vscode",
+
+    // ==================== CSS 相关 ====================
+    // UnoCSS 智能提示
+    "antfu.unocss",
+    // Sass 语法支持
+    "syler.sass-indented",
+    // PostCSS 语法支持
+    "csstools.postcss",
+
+    // ==================== 开发工具（推荐） ====================
+    // 路径智能提示
+    "christian-kohler.path-intellisense",
+    // 自动重命名标签
+    "formulahendry.auto-rename-tag",
+    // 自动闭合标签
+    "formulahendry.auto-close-tag",
+    // 括号对着色
+    "CoenraadS.bracket-pair-colorizer-2",
+    // 缩进彩虹
+    "oderwat.indent-rainbow",
+    // 错误提示
+    "usernamehw.errorlens",
+    // Git 增强
+    "eamodio.gitlens",
+    // 中文语言包
+    "MS-CEINTL.vscode-language-pack-zh-hans",
+    // 图标主题
+    "PKief.material-icon-theme",
+    // 代码片段
+    "hollowtree.vue-snippets",
+    // i18n Ally（国际化支持）
+    "Lokalise.i18n-ally",
+    // DotENV 语法高亮
+    "mikestead.dotenv",
+    // EditorConfig 支持
+    "EditorConfig.EditorConfig"
+  ]
 }

@@ -1,0 +1,19 @@
+# 浏览器兼容性配置
+# 用于 Autoprefixer 和其他工具
+
+# 生产环境
+> 0.5%
+last 2 versions
+not dead
+not op_mini all
+
+# 移动端
+iOS >= 10
+Android >= 5
+
+# 桌面端
+Chrome >= 60
+Firefox >= 60
+Safari >= 10
+Edge >= 79
+

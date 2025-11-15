@@ -1,0 +1,14 @@
+###
+ # @Author: morijiu
+ # @Date: 2025-11-15 17:24:54
+ # @LastEditors: Do not edit
+ # @LastEditTime: 2025-11-15 17:43:29
+ # @Description:
+ # @FilePath: \vue3-antd-admin-template\.husky\pre-commit
+###
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 在 git commit 前运行 lint-staged
+npx lint-staged
+
