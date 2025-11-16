@@ -2,7 +2,7 @@
  * @Author: morijiu
  * @Date: 2025-11-15 15:43:33
  * @LastEditors: Do not edit
- * @LastEditTime: 2025-11-16 20:27:02
+ * @LastEditTime: 2025-11-16 20:30:13
  * @Description:
  * @FilePath: \vue3-antd-admin-template\src\main.ts
  */
