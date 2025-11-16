@@ -21,7 +21,9 @@ export function downloadFile(response: AxiosResponse, filename?: string): void {
       if (filenameMatch && filenameMatch[1]) {
         downloadFilename = filenameMatch[1].replace(/['"]/g, '')
         // 解码文件名
-        downloadFilename = decodeURIComponent(downloadFilename)
+        if (downloadFilename) {
+          downloadFilename = decodeURIComponent(downloadFilename)
+        }
       }
     }
   }

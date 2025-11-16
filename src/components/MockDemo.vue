@@ -43,7 +43,7 @@
 import { ref } from 'vue'
 import { message } from 'ant-design-vue'
 import { getEnvMode, getApiBaseUrl } from '@/utils/env'
-import { request } from '@/utils/request'
+import request from '@/utils/request'
 
 // 环境信息
 const envMode = getEnvMode()

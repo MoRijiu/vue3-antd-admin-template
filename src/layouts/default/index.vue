@@ -69,22 +69,22 @@ const menuItems = computed(() => [
     key: '/home',
     icon: 'HomeOutlined',
     label: t('menu.home'),
-  },
+  } as any,
   {
     key: '/user',
     icon: 'UserOutlined',
     label: t('menu.user'),
-  },
+  } as any,
   {
     key: '/settings',
     icon: 'SettingOutlined',
     label: t('menu.settings'),
-  },
+  } as any,
 ])
 
 // 菜单点击
-function handleMenuClick({ key }: { key: string }) {
-  router.push(key)
+function handleMenuClick({ key }: { key: string | number }) {
+  router.push(key as string)
 }
 
 // 退出登录

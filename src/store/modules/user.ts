@@ -138,7 +138,7 @@ export const useUserStore = defineStore(
       key: 'user-store',
       storage: localStorage,
       // 指定需要持久化的字段
-      paths: ['token', 'userInfo', 'roles', 'permissions'],
+      pick: ['token', 'userInfo', 'roles', 'permissions'],
     },
   }
 )

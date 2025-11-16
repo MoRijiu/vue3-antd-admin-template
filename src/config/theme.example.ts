@@ -33,7 +33,7 @@ export function exampleSetThemeColor() {
   const appStore = useAppStore()
 
   // 设置为预设主题色
-  appStore.setThemeColor(THEME_COLORS[0].value) // 拂晓蓝
+  appStore.setThemeColor(THEME_COLORS[0]?.value || '#1890ff') // 拂晓蓝
 
   // 或者设置为自定义颜色
   appStore.setThemeColor('#1890ff')

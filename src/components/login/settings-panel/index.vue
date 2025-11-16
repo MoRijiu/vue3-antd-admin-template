@@ -98,8 +98,8 @@ const themeColors = THEME_COLORS.map((item) => item.value)
 /**
  * 切换语言
  */
-const handleLanguageChange = ({ key }: { key: string }) => {
-  changeLocale(key)
+const handleLanguageChange = ({ key }: { key: string | number }) => {
+  changeLocale(key as string)
 }
 
 /**

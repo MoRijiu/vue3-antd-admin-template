@@ -25,7 +25,7 @@
         type="text"
         placeholder="请输入内容"
         :disabled="disabled"
-        @input="handleInput($event.target.value)"
+        @input="handleInputEvent"
       />
     </div>
 
@@ -111,6 +111,16 @@ function reset(): void {
  */
 function handleClick(event: MouseEvent): void {
   emit('click', event)
+}
+
+/**
+ * 处理输入事件
+ */
+function handleInputEvent(event: Event): void {
+  const target = event.target as HTMLInputElement | null
+  if (target) {
+    handleInput(target.value)
+  }
 }
 
 /**

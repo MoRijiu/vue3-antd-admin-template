@@ -75,7 +75,7 @@ export function removeUrlParams(url: string, keys: string[]): string {
   })
 
   const paramStr = buildUrlParams(params)
-  return paramStr ? `${baseUrl}?${paramStr}` : baseUrl
+  return paramStr ? `${baseUrl}?${paramStr}` : baseUrl || ''
 }
 
 /**

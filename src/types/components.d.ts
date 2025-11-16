@@ -11,9 +11,9 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AAlert: typeof import('ant-design-vue/es')['Alert']
     AButton: typeof import('ant-design-vue/es')['Button']
     ACard: typeof import('ant-design-vue/es')['Card']
-    ACheckbox: typeof import('ant-design-vue/es')['Checkbox']
     ACol: typeof import('ant-design-vue/es')['Col']
     AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
     ADivider: typeof import('ant-design-vue/es')['Divider']
@@ -38,7 +38,6 @@ declare module 'vue' {
     ATooltip: typeof import('ant-design-vue/es')['Tooltip']
     AUpload: typeof import('ant-design-vue/es')['Upload']
     AutoImportDemo: typeof import('./../components/AutoImportDemo.vue')['default']
-    Captcha: typeof import('./../components/login/captcha/index.vue')['default']
     Default: typeof import('./../layouts/default/index.vue')['default']
     EnvInfo: typeof import('./../components/EnvInfo.vue')['default']
     FeatureList: typeof import('./../components/login/feature-list/index.vue')['default']

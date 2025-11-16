@@ -105,7 +105,7 @@ export const usePermissionStore = defineStore(
       key: 'permission-store',
       storage: sessionStorage,
       // 不持久化路由信息，每次刷新重新生成
-      paths: ['isRoutesGenerated'],
+      pick: ['isRoutesGenerated'],
     },
   }
 )

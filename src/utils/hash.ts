@@ -3,7 +3,9 @@
  * 基于 js-md5
  */
 
-import md5 from 'js-md5'
+import * as md5Module from 'js-md5'
+
+const md5 = (md5Module as any).default || md5Module
 
 /**
  * MD5 哈希

@@ -169,7 +169,7 @@ export const useAppStore = defineStore(
       key: 'app-store',
       storage: localStorage,
       // 指定需要持久化的字段
-      paths: ['collapsed', 'theme', 'themeColor', 'locale'],
+      pick: ['collapsed', 'theme', 'themeColor', 'locale'],
     },
   }
 )

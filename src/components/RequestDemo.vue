@@ -170,9 +170,8 @@ async function handleLogin() {
 /**
  * 上传头像
  */
-async function handleUpload(event: Event) {
-  const target = event.target as HTMLInputElement
-  const file = target.files?.[0]
+async function handleUpload(info: any) {
+  const file = info.file
   if (!file) return
 
   loading.value = true

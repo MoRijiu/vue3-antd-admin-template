@@ -27,7 +27,7 @@ const WHITE_LIST = ['/login', '/404']
  */
 export function setupRouterGuards(router: Router) {
   // 全局前置守卫
-  router.beforeEach(async (to, from, next) => {
+  router.beforeEach(async (to, _from, next) => {
     // 取消所有待处理的请求
     cancelAllPendingRequests()
 

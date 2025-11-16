@@ -61,7 +61,7 @@ export const THEME_COLORS: ThemeColor[] = [
 /**
  * 默认主题色
  */
-export const DEFAULT_THEME_COLOR = THEME_COLORS[0].value
+export const DEFAULT_THEME_COLOR = THEME_COLORS[0]?.value || '#1890ff'
 
 /**
  * 默认主题模式
