@@ -2,6 +2,9 @@
  * 中文语言包
  */
 
+import loginModule from './modules/login.zh-CN'
+import themeModule from './modules/theme.zh-CN'
+
 export default {
   common: {
     confirm: '确定',
@@ -37,21 +40,10 @@ export default {
     user: '用户管理',
     settings: '系统设置',
   },
-  login: {
-    title: '用户登录',
-    username: '用户名',
-    password: '密码',
-    remember: '记住密码',
-    forgot: '忘记密码',
-    login: '登录',
-    register: '注册',
-    welcome: '欢迎登录',
-    usernamePlaceholder: '请输入用户名',
-    passwordPlaceholder: '请输入密码',
-    loginSuccess: '登录成功',
-    loginFailed: '登录失败',
-    logoutSuccess: '退出成功',
-  },
+  // 登录模块（使用独立的模块文件）
+  login: loginModule,
+  // 主题模块
+  theme: themeModule,
   user: {
     username: '用户名',
     email: '邮箱',

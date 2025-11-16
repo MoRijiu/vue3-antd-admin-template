@@ -25,6 +25,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   }
 
   return {
+    // GitHub Pages 部署时需要设置 base 路径
+    // 如果部署到 https://<USERNAME>.github.io/<REPO>/，则设置为 '/<REPO>/'
+    // 如果部署到 https://<USERNAME>.github.io/，则设置为 '/'
+    base: process.env.NODE_ENV === 'production' ? '/vue3-antd-admin-template/' : '/',
+
     plugins: [
       vue(),
       // UnoCSS 插件

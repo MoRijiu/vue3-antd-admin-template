@@ -3,7 +3,9 @@
  */
 
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+import { DEFAULT_THEME_COLOR, DEFAULT_THEME_MODE } from '@/config/theme'
+import type { ThemeMode } from '@/config/theme'
 
 export const useAppStore = defineStore(
   'app',
@@ -14,7 +16,9 @@ export const useAppStore = defineStore(
     // 设备类型
     const device = ref<'desktop' | 'mobile'>('desktop')
     // 主题模式
-    const theme = ref<'light' | 'dark'>('light')
+    const theme = ref<ThemeMode>(DEFAULT_THEME_MODE)
+    // 主题色
+    const themeColor = ref(DEFAULT_THEME_COLOR)
     // 语言
     const locale = ref('zh-CN')
     // 页面加载状态
@@ -58,8 +62,44 @@ export const useAppStore = defineStore(
     /**
      * 设置主题
      */
-    function setTheme(value: 'light' | 'dark') {
+    function setTheme(value: ThemeMode) {
       theme.value = value
+      applyTheme()
+    }
+
+    /**
+     * 设置主题色
+     */
+    function setThemeColor(value: string) {
+      themeColor.value = value
+      applyThemeColor()
+    }
+
+    /**
+     * 应用主题模式到 DOM
+     */
+    function applyTheme() {
+      const html = document.documentElement
+      if (theme.value === 'dark') {
+        html.classList.add('dark')
+      } else {
+        html.classList.remove('dark')
+      }
+    }
+
+    /**
+     * 应用主题色到 DOM
+     */
+    function applyThemeColor() {
+      document.documentElement.style.setProperty('--primary-color', themeColor.value)
+    }
+
+    /**
+     * 初始化主题
+     */
+    function initTheme() {
+      applyTheme()
+      applyThemeColor()
     }
 
     /**
@@ -82,16 +122,29 @@ export const useAppStore = defineStore(
     function reset() {
       collapsed.value = false
       device.value = 'desktop'
-      theme.value = 'light'
+      theme.value = DEFAULT_THEME_MODE
+      themeColor.value = DEFAULT_THEME_COLOR
       locale.value = 'zh-CN'
       loading.value = false
+      initTheme()
     }
+
+    // 监听主题变化，自动应用
+    watch(theme, () => {
+      applyTheme()
+    })
+
+    // 监听主题色变化，自动应用
+    watch(themeColor, () => {
+      applyThemeColor()
+    })
 
     return {
       // State
       collapsed,
       device,
       theme,
+      themeColor,
       locale,
       loading,
       // Getters
@@ -103,8 +156,10 @@ export const useAppStore = defineStore(
       setDevice,
       toggleTheme,
       setTheme,
+      setThemeColor,
       setLocale,
       setLoading,
+      initTheme,
       reset,
     }
   },
@@ -114,7 +169,7 @@ export const useAppStore = defineStore(
       key: 'app-store',
       storage: localStorage,
       // 指定需要持久化的字段
-      paths: ['collapsed', 'theme', 'locale'],
+      paths: ['collapsed', 'theme', 'themeColor', 'locale'],
     },
   }
 )

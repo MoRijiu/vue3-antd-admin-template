@@ -2,6 +2,9 @@
  * English language pack
  */
 
+import loginModule from './modules/login.en-US'
+import themeModule from './modules/theme.en-US'
+
 export default {
   common: {
     confirm: 'Confirm',
@@ -37,21 +40,10 @@ export default {
     user: 'User Management',
     settings: 'Settings',
   },
-  login: {
-    title: 'User Login',
-    username: 'Username',
-    password: 'Password',
-    remember: 'Remember',
-    forgot: 'Forgot Password',
-    login: 'Login',
-    register: 'Register',
-    welcome: 'Welcome',
-    usernamePlaceholder: 'Please enter username',
-    passwordPlaceholder: 'Please enter password',
-    loginSuccess: 'Login successful',
-    loginFailed: 'Login failed',
-    logoutSuccess: 'Logout successful',
-  },
+  // Login module (using separate module file)
+  login: loginModule,
+  // Theme module
+  theme: themeModule,
   user: {
     username: 'Username',
     email: 'Email',
