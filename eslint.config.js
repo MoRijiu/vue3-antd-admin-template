@@ -10,10 +10,15 @@ import pluginTypeScript from '@typescript-eslint/eslint-plugin'
 import parserTypeScript from '@typescript-eslint/parser'
 import configPrettier from 'eslint-config-prettier'
 import pluginPrettier from 'eslint-plugin-prettier'
-import { readFileSync } from 'fs'
+import { readFileSync, existsSync } from 'fs'
 
 // 读取自动导入的全局变量配置
-const autoImportGlobals = JSON.parse(readFileSync('./.eslintrc-auto-import.json', 'utf-8'))
+// 如果文件不存在（例如在 CI 环境中首次运行），使用空对象
+let autoImportGlobals = { globals: {} }
+const autoImportPath = './.eslintrc-auto-import.json'
+if (existsSync(autoImportPath)) {
+  autoImportGlobals = JSON.parse(readFileSync(autoImportPath, 'utf-8'))
+}
 
 export default [
   // ==================== 推荐的基础配置 ====================
